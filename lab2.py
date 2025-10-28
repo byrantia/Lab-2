@@ -31,11 +31,21 @@ def find_min_max(num_list):
     return [min_number,max_number]
 
 
-def sort_temperature():
-    return
+def sort_temperature(num_list):
+      return sorted(num_list)
 
-def calc_median_temperature():
-    return
+def calc_median_temperature(num_list):
+     num_list = sorted(num_list)
+
+     if len(num_list)%2 == 1:
+         #odd
+        odd_median = num_list[int(len(num_list)/2)]
+        return odd_median
+     else:
+        #even
+     
+        even_median = (num_list[int(len(num_list)/2)] + num_list[int(len(num_list)/2)-1])/2
+        return even_median
 
 
 def main():
@@ -45,6 +55,10 @@ def main():
     calc_average(num_list)
     y = find_min_max(num_list)
     print(y)
+    sort_value = sort_temperature(num_list)
+    print(sort_value)
+    x=calc_median_temperature(num_list)
+    print(x)
 
 if __name__ == "__main__":
     main()
